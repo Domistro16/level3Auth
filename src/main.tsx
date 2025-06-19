@@ -9,14 +9,12 @@ import {
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { WagmiProvider } from "@web3auth/modal/react/wagmi";
 import {
-  UX_MODE,
   WEB3AUTH_NETWORK,
   type Web3AuthOptions,
 } from "@web3auth/modal";
 import { getDefaultConfig, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 import { bscTestnet } from "viem/chains";
-import { metaMaskWallet } from "@rainbow-me/rainbowkit/wallets";
 
 const config = getDefaultConfig({
   appName: "Creator Domains",
