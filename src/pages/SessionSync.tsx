@@ -3,6 +3,7 @@ import { useEffect } from "react";
 
 const ALLOWED_ORIGINS = [
   "http://localhost:5173",
+  "http://localhost:5174",
   "https://ens-contracts-iota.vercel.app",
 ];
 
@@ -13,7 +14,7 @@ export default function SessionSync() {
       window.location.origin
     );
     const handleMessage = (event: MessageEvent) => {
-      console.log(event.data)
+      console.log(event.data);
       if (!ALLOWED_ORIGINS.includes(event.origin)) return;
       console.log("[iframe] got postMessage:", event.origin, event.data);
       try {
