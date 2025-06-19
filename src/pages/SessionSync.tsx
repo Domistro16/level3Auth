@@ -13,6 +13,7 @@ export default function SessionSync() {
       window.location.origin
     );
     const handleMessage = (event: MessageEvent) => {
+      console.log(event.data)
       if (!ALLOWED_ORIGINS.includes(event.origin)) return;
       console.log("[iframe] got postMessage:", event.origin, event.data);
       try {
