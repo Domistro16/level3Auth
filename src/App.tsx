@@ -2,15 +2,23 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import SignIn from "./pages/Login";
 import SessionSync from "./pages/SessionSync";
-import  { RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import  { getDefaultConfig, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   type Web3AuthContextConfig,
   Web3AuthProvider,
 } from "@web3auth/modal/react";
-import { config } from "process";
 import  { WagmiProvider } from "@web3auth/modal/react/wagmi";
 import { type Web3AuthOptions, WEB3AUTH_NETWORK } from "@web3auth/modal";
+import { bscTestnet } from "viem/chains";
+
+
+const config = getDefaultConfig({
+  appName: "Creator Domains",
+  projectId: "YOUR_PROJECT_ID",
+  chains: [bscTestnet],
+});
+
 
 const web3AuthOptions: Web3AuthOptions = {
   clientId: import.meta.env.CLIENT_ID || import.meta.env.VITE_CLIENT_ID,
