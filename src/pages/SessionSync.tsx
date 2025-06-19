@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 const ALLOWED_ORIGINS = [
   "http://localhost:5173",
-  "https://ens-contracts-iota.vercel.app/",
+  "https://ens-contracts-iota.vercel.app",
 ];
 
 export default function SessionSync() {
