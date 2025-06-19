@@ -1,17 +1,13 @@
 import { FaDiscord, FaFacebookF, FaGoogle, FaXTwitter } from "react-icons/fa6";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
 import {
   useWeb3AuthConnect,
-  useWeb3AuthDisconnect,
 } from "@web3auth/modal/react";
 import { WALLET_CONNECTORS, AUTH_CONNECTION } from "@web3auth/modal";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 
 export default function SignIn() {
-  const { connectTo, loading, isConnected, error, connect } =
+  const { connectTo, isConnected, error, connect } =
     useWeb3AuthConnect();
-  const { disconnect } = useWeb3AuthDisconnect();
   const [email, setEmail] = useState("");
 
   useEffect(() => {

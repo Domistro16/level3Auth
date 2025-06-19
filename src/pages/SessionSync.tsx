@@ -8,10 +8,10 @@ const ALLOWED_ORIGINS = [
 
 export default function SessionSync() {
   useEffect(() => {
-      console.log(
-        "[iframe] SessionSync mounted, origin=",
-        window.location.origin
-      );
+    console.log(
+      "[iframe] SessionSync mounted, origin=",
+      window.location.origin
+    );
     const handleMessage = (event: MessageEvent) => {
       if (!ALLOWED_ORIGINS.includes(event.origin)) return;
       console.log("[iframe] got postMessage:", event.origin, event.data);
